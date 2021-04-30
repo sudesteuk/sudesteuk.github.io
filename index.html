@@ -1,7 +1,48 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>Sudeste UK.</p>
-</body>
-</html>
+---
+layout: default
+title: Sudeste Sports
+description: Sudeste is a sport and lifestyle company made up of athletes, swimmers and experienced beach lifeguards.
+featured_image: /images/social.jpg
+---
+
+<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Sudeste is a sport and lifestyle company made up of athletes, swimmers and experienced beach lifeguards.</h1>
+		<p>Now part of Machine Surf Craft Limited.</p>
+
+	</div>
+
+</section>
+
+<section class="portfolio">
+
+	<div class="content-wrap portfolio-wrap">
+
+		{% for products in site.products reversed %}
+
+		<div class="portfolio-item">
+
+			<a class="portfolio-item__link" href="{{ project.url | relative_url }}">
+
+				<div class="portfolio-item__image">
+					<img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}">
+				</div>
+
+				<div class="portfolio-item__content">
+					<div class="portfolio-item__info">
+						<h2 class="portfolio-item__title">{{ project.title }}</h2>
+						<p class="portfolio-item__subtitle">{{ project.subtitle }}</p>
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</section>
